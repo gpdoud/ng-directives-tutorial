@@ -1,0 +1,37 @@
+<h3>Ng-Directive-Tutorial</h3>
+
+<div>
+  <table class="table">
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>COLOR</td>
+    </tr>
+    <tr *ngFor="let x of arrData">
+      <td>{{x.id}}</td>
+      <td>{{x.name}}</td>
+      <td>{{x.favColor}}</td>
+    </tr>
+  </table>
+</div>
+
+<div [ngSwitch]="howIFeel">
+  <h3>ngSwitch</h3>
+  <h1 *ngSwitchCase=3>I feel great!</h1>
+  <h2 *ngSwitchCase=2>I feel Ok!</h2>
+  <h3 *ngSwitchCase=1>I feel blah!</h3>
+  <h6 *ngSwitchCase=0>I feel like crap!</h6>
+</div>
+
+<button class="btn btn-secondary" (click)="chgColor()">Change button color</button> | 
+
+<button [ngClass]="btnCls" (click)="great()">I feel great!</button> | 
+<button [ngClass]="btnCls" (click)="ok()">I feel ok!</button> | 
+<button [ngClass]="btnCls" (click)="blah()">I feel blah!</button> | 
+<button [ngClass]="btnCls" (click)="crappy()">I feel like crap!</button>
+
+<h1 *ngIf="howIFeel === 3">I feel great!</h1>
+<h2 *ngIf="howIFeel === 2">I feel Ok!</h2>
+<h3 *ngIf="howIFeel === 1">I feel blah!</h3>
+<h6 *ngIf="howIFeel === 0">I feel like crap!</h6>
+
